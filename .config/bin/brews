@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! type brew &>/dev/null; then
+  echo 'brew not found'
+  exit 1
+fi
+
+formulae="$(brew leaves | xargs brew deps --installed --for-each)"
+casks="$(brew list --cask 2>/dev/null)"
+blue="$(tput setaf 4)"
+bold="$(tput bold)"
+off="$(tput sgr0)"
+echo "${blue}==>${off} ${bold}Formulae${off}"
+printf "${formulae}" | sed "s/^\(.*\):\(.*\)$/\1${blue}\2${off}/"
+printf "\n${blue}==>${off} ${bold}Casks${off}\n${casks}"

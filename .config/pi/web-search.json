@@ -1,0 +1,5 @@
+{
+  "provider": "exa",
+  "searchModel": "opencode-go/deepseek-v4.1-flash",
+  "summaryModel": "opencode-go/deepseek-v4.1-flash"
+}

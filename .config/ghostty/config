@@ -1,0 +1,15 @@
+background-blur-radius = 10
+background-opacity = 1
+confirm-close-surface = false
+cursor-style = block
+font-family = CodeNewRoman Nerd Font Mono
+initial-window=true
+macos-option-as-alt = true
+macos-titlebar-proxy-icon = hidden
+quick-terminal-animation-duration = 0
+quick-terminal-autohide = true
+quick-terminal-position = top
+shell-integration-features = no-cursor,ssh-env,ssh-terminfo
+theme = Pro
+title = " "
+window-save-state = always

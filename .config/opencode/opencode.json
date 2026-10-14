@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "lsp": false,
+  "model": "opencode-go/deepseek-v4.1-flash",
+  "permission": {
+    "*": "allow"
+  },
+  "small_model": "opencode-go/deepseek-v4.1-flash"
+}

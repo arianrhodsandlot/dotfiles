@@ -1,0 +1,72 @@
+# Personal
+*#*
+*.[1-9]
+*.[1-9].*
+*.agent.*
+*.i
+*.i.*
+*.local
+*.local.*
+*.log
+*.temp.*
+*.tmp.*
+*~*
+.agents
+.cache
+.codex
+.env.*.local
+.git-blame-ignore-revs
+.mailmap
+.pi
+.playwright-cli
+.temp
+.tmp
+.tool-versions
+.vscode
+.zed
+Agents.md
+Desktop.ini
+plan.md
+review.md
+skills-lock.json
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+._*
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+*.icloud
+Network Trash Folder
+Temporary Items
+
+# Linux
+.directory
+.fuse_hidden*
+.nfs*
+.Trash-*
+*~

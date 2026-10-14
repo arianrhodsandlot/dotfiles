@@ -1,0 +1,2 @@
+[bootstrap.repos]
+"~/.config/dotfiles" = { url = "git@github.com:arianrhodsandlot/dotfiles.git" }

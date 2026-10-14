@@ -1,0 +1,41 @@
+[
+  {
+    "bindings": {
+      "secondary-,": "zed::OpenSettingsFile",
+      "secondary-k w": "workspace::CloseAllItemsAndPanes",
+      "secondary-shift-i": "workspace::ToggleRightDock"
+    },
+    "context": "Workspace",
+    "unbind": {
+      "secondary-w": "workspace::CloseActiveDock"
+    },
+    "use_key_equivalents": true
+  },
+  {
+    "bindings": {
+      "alt-z": "editor::ToggleSoftWrap"
+    },
+    "context": "Editor && mode == full",
+    "unbind": {
+      "secondary-shift-i": "editor::Format",
+      "secondary-w": "workspace::CloseActiveDock"
+    },
+    "use_key_equivalents": true
+  },
+  {
+    "bindings": {
+      "secondary-w": "pane::CloseActiveItem"
+    },
+    "context": "ProjectPanel",
+    "unbind": {
+      "secondary-n": "project_panel::NewFile"
+    },
+    "use_key_equivalents": true
+  },
+  {
+    "context": "!SettingsWindow",
+    "unbind": {
+      "secondary-,": "zed::OpenSettings"
+    }
+  }
+]

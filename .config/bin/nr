@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+node_version=$(node --version | cut -d'v' -f2 | cut -d'.' -f1)
+
+if [[ $node_version -ge 22 ]]; then
+  node --run "$@"
+  exit
+fi
+
+if [[ -f "pnpm-lock.yaml" ]]; then
+  pkg_manager="pnpm"
+elif [[ -f "yarn.lock" ]]; then
+  pkg_manager="yarn"
+elif [[ -f "package-lock.json" ]]; then
+  pkg_manager="npm"
+else
+  if type pnpm &>/dev/null; then
+    pkg_manager="pnpm"
+  elif type yarn &>/dev/null; then
+    pkg_manager="yarn"
+  elif type npm &>/dev/null; then
+    pkg_manager="npm"
+  else
+    echo "Error: Node version $node_version is lower than 22 and no package manager found" >&2
+    exit 1
+  fi
+fi
+
+# npm requires "run" keyword, yarn and pnpm don't
+if [[ "$pkg_manager" == "npm" ]]; then
+  "$pkg_manager" run "$@"
+else
+  "$pkg_manager" "$@"
+fi

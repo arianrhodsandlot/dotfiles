@@ -1,0 +1,16 @@
+git:
+  diffRenderers:
+    - colorArg: always
+      command: delta --paging=never
+  mainBranches:
+    - master
+    - main
+    - release
+  autoForwardBranches: 'allBranches'
+  parseEmoji: true
+  log:
+    showWholeGraph: true
+disableStartupPopups: true
+gui:
+  timeFormat: 2006-01-02 15:04
+  shortTimeFormat: 2006-01-02 15:04

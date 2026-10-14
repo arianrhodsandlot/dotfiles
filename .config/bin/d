@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ -f package.json ]]; then
+  scripts=$(yq -r '.scripts' package.json)
+  if [[ $scripts == *"dev:stage"* ]]; then
+    $DOTFILES_CONFIG_DIR/bin/nr dev:stage
+  elif [[ $scripts == *"dev"* ]]; then
+    $DOTFILES_CONFIG_DIR/bin/nr dev
+  else
+    echo 'No dev script found in package.json'
+  fi
+else
+  echo 'No package.json found'
+fi

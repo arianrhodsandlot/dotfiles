@@ -1,0 +1,24 @@
+[brew]
+autoremove = true
+
+[git]
+repos = ["~/.config/dotfiles"]
+arguments = "--rebase --autostash"
+fallback_to_fetch_default = true
+
+[misc]
+ask_retry = false
+assume_yes = true
+cleanup = true
+disable = ["bin", "cargo", "containers", "github_cli_extensions", "pip3", "node", "pnpm", "rustup", "tmux", "vim", "vite_plus"]
+no_self_update = true
+notify_end = "never"
+
+[post_commands]
+pi-models = "pi update --models"
+
+[vscode]
+cleanup_obsolete_extensions = true
+
+[windows]
+accept_all_updates = true

@@ -1,0 +1,43 @@
+[tools]
+bat = 'latest'
+delta = 'latest'
+dust = 'latest'
+eza = 'latest'
+fd = 'latest'
+fzf = 'latest'
+jq = 'latest'
+ripgrep = 'latest'
+sd = 'latest'
+starship = 'latest'
+tlrc = 'latest'
+topgrade = 'latest'
+yq = 'latest'
+zoxide = 'latest'
+
+'github:arianrhodsandlot/asobou' = { version = 'latest', lazy = true, lazy_bins = ['asobou'] }
+'npm:@arianrhodsandlot/release-kit' = { version = 'latest', lazy = true, lazy_bins = ['rk'] }
+'npm:npm-check-updates' = { version = 'latest', lazy = true, lazy_bins = ['ncu'] }
+'npm:skills' = { version = 'latest', lazy = true, lazy_bins = ['skills'] }
+7zip = { version = 'latest', lazy = true }
+android-sdk = { version = 'latest', lazy = true }
+ast-grep = { version = 'latest', lazy = true }
+bottom = { version = 'latest', lazy = true }
+bun = { version = 'latest', lazy = true }
+cargo-binstall = { version = 'latest', lazy = true }
+codex = { version = 'latest', lazy = true }
+curlie = { version = 'latest', lazy = true }
+fastfetch = { version = 'latest', lazy = true }
+gh = { version = 'latest', lazy = true }
+herdr = { version = 'latest', lazy = true }
+lazygit = { version = 'latest', lazy = true }
+miniserve = { version = 'latest', lazy = true }
+mole = { version = 'latest', lazy = true }
+node = { version = 'latest', lazy = true }
+npm = { version = 'latest', lazy = true }
+pi = { version = 'latest', lazy = true }
+playwright = { version = 'latest', lazy = true }
+pnpm = { version = 'latest', lazy = true }
+python = { version = 'latest', lazy = true }
+rust = { version = 'latest', lazy = true }
+viteplus = { version = 'latest', lazy = true }
+yt-dlp = { version = 'latest', lazy = true }

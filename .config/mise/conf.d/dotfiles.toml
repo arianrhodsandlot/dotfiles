@@ -1,0 +1,23 @@
+[dotfiles]
+'~/.bashrc' = {}
+'~/.config/alacritty/alacritty.toml' = {}
+'~/.config/bottom/bottom.toml' = {}
+'~/.config/ghostty/config' = {}
+'~/.config/git/config' = {}
+'~/.config/herdr/config.toml' = {}
+'~/.config/kitty/kitty.conf' = {}
+'~/.config/mintty/config' = {}
+'~/.config/opencode/opencode.json' = {}
+'~/.config/pnpm/config.yaml' = {}
+'~/.config/tmux/tmux.conf' = {}
+'~/.config/topgrade/topgrade.toml' = {}
+'~/.config/user-dirs.dirs' = {}
+'~/.config/user-dirs.locale' = {}
+'~/.config/wezterm/wezterm.lua' = {}
+'~/.config/yt-dlp/config' = {}
+'~/.config/zed/keymap.json' = {}
+'~/.config/zed/settings.json' = {}
+'~/.hushlogin' = {}
+'~/.inputrc' = {}
+'~/.vimrc' = {}
+'~/.zshrc' = {}

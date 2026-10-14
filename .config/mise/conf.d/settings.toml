@@ -1,0 +1,17 @@
+[settings]
+cache_prune_age = '1d'
+dotfiles.default_mode = "symlink"
+dotfiles.root = "~/.config/dotfiles"
+experimental = true
+github_attestations = false
+minimum_release_age = '0s'
+yes = true
+
+[settings.node]
+compile = false
+
+[settings.npm]
+shell_out = true
+
+[settings.python]
+compile = false

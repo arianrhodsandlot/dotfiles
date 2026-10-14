@@ -1,0 +1,9 @@
+[dotfiles]
+"~/.config/clink/starship.lua" = {}
+"~/.config/cmd/init.bat" = {}
+"~/AppData/Local/Packages/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/LocalState/settings.json" = "~/.config/dotfiles/.config/windows/winget/settings.json"
+"~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" = "~/.config/dotfiles/.config/windows/wt/settings.json"
+"~/AppData/Roaming//topgrade/topgrade.toml" = "~/.config/topgrade/topgrade.toml"
+"~/AppData/Roaming/Zed/keymap.json" = "~/.config/zed/keymap.json"
+"~/AppData/Roaming/Zed/settings.json" = "~/.config/zed/settings.json"
+"~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1" = "~/.config/dotfiles/.config/powershell/Microsoft.PowerShell_profile.ps1"

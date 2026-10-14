@@ -1,0 +1,15 @@
+[bootstrap.macos.defaults]
+"com.apple.dock" = { wvous-tl-corner = 2, wvous-tr-corner = 12, wvous-bl-corner = 10, wvous-br-corner = 4 }
+
+[bootstrap.macos.finder]
+preferred_view_style = 'list'
+show_all_files = false
+show_extensions_warning = false
+show_pathbar = true
+
+[bootstrap.macos.trackpad]
+tap_to_click = true
+three_finger_drag = true
+
+[dotfiles]
+"~/.config/iterm2/com.googlecode.iterm2.plist" = {}

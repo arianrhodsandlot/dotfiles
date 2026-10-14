@@ -1,0 +1,22 @@
+{
+  "$schema": "https://pi.dev/schemas/settings.schema.json",
+  "autocompleteMaxVisible": 20,
+  "collapseChangelog": true,
+  "defaultModel": "deepseek-v4.1-flash",
+  "defaultProjectTrust": "always",
+  "defaultProvider": "opencode-go",
+  "defaultThinkingLevel": "high",
+  "enableInstallTelemetry": false,
+  "lastChangelogVersion": "999.999.999",
+  "packages": [
+    "npm:pi-subagents",
+    "npm:pi-web-access",
+    "git:github.com/earendil-works/pi-review"
+  ],
+  "quietStartup": true,
+  "shellCommandPrefix": ". ~/.config/dotfiles/.config/pi/agent/references/aliases.sh",
+  "showCacheMissNotices": true,
+  "showHardwareCursor": true,
+  "theme": "dark",
+  "tuiMode": "regular"
+}

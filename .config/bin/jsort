@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+for file in "$@"; do
+  if [[ "$file" == *.json ]]; then
+    yq -iP 'sort_keys(..)' "$file"
+  fi
+done
+
+if type vp &>/dev/null; then
+  if [[ "$PWD" == "$HOME" ]]; then
+    echo '{ "private": true }' >"$HOME/package.json"
+  fi
+  vp fmt "$@"
+  rm -f "$HOME/package.json"
+fi

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! type defaults &>/dev/null; then
+  echo 'defaults not found'
+  exit 1
+fi
+
+defaults delete com.apple.dock
+defaults write com.apple.dock ResetLaunchPad -bool true
+
+defaults write com.apple.dock wvous-tl-corner -int 2  # Mission Control
+defaults write com.apple.dock wvous-tr-corner -int 12 # Notification Center
+defaults write com.apple.dock wvous-bl-corner -int 10 # Put display to sleep
+defaults write com.apple.dock wvous-br-corner -int 4  # Desktop
+
+killall Dock

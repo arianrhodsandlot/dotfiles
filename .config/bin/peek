@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+d=${1:-$PWD}
+cd $d
+total=$(ls | wc -l | tr -d ' ')
+if [[ "$total" -gt 100 ]]; then
+  ls | head -n 100 | tr '\n' '\0' | xargs -0 eza --icons -d --
+  remaining=$((total - 100))
+  echo "and $remaining more..."
+else
+  ls | tr '\n' '\0' | xargs -0 eza --icons -d --
+fi
+
+if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
+  git branch
+  git status --show-stash
+fi

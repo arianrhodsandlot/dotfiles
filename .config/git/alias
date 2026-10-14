@@ -1,0 +1,67 @@
+[alias]
+  a = add
+  aa = add --all
+  b = branch
+  ba = branch --all
+  ca = commit --verbose --amend
+  cb = checkout -b
+  cbr = create-branch
+  cd = !git checkout $(git dev-branch)
+  cl = clone --recurse-submodules
+  clean = clean --interactive -d
+  cm = !git checkout $(git main-branch)
+  cmsg = "!f() { git commit -m \"$*\"; }; f"
+  cmsgn = "!f() { git commit -n -m \"$*\"; }; f"
+  co = checkout
+  cof = "!f() { if [ $# -eq 0 ]; then git checkout; elif git show-ref --verify --quiet refs/heads/\"$1\" || git show-ref --verify --quiet refs/remotes/origin/\"$1\"; then git checkout \"$1\"; else local_branch=$(git branch --format='%(refname:short)' | fzf --filter=\"$1\" --exit-0 | head -n1); if [ -n \"$local_branch\" ]; then git checkout \"$local_branch\"; else remote_branch=$(git branch -r --format='%(refname:short)' | sed 's|^origin/||' | fzf --filter=\"$1\" --exit-0 | head -n1); if [ -n \"$remote_branch\" ]; then git checkout \"$remote_branch\"; else git checkout \"$@\"; fi; fi; fi; }; f"
+  count = shortlog -sne --no-merges --all
+  cp = cherry-pick
+  create-branch = "!f() { git checkout -b \"$1\" && git push origin \"$1\"; }; f"
+  d = diff
+  dca = diff --cached
+  dd = !git diff $(git dev-branch)
+  delete-branch = "!f() { for b in \"$@\"; do git branch -d \"$b\" 2>/dev/null; git push origin --delete \"$b\" 2>/dev/null; done; }; f"
+  delete-merged-branches = "!git branch --no-color --merged  | grep -vE '^(\\*|\\+)' | grep -v $(git main-branch) | grep -v $(git dev-branch) | grep -v svn | xargs git delete-branch" ; delete merged branches
+  delete-tag = "!f() { for t in \"$@\"; do git tag -d \"$t\" 2>/dev/null; git push origin --delete \"$t\" 2>/dev/null; done; }; f"
+  dev-branch = "!f() { for b in dev devel develop development; do git show-ref -q --heads $b && echo $b && return; done; echo develop; }; f"
+  dm = !git diff $(git main-branch)
+  dw = diff --word-diff
+  fa = fetch --all --prune --jobs=0
+  fo = fetch origin
+  l = pull
+  lg = log --stat --patch
+  lo = log --oneline --decorate --date=format:'%Y-%m-%d %H:%M %z %a(%w)' --pretty=format:'%C(yellow)%h%Creset %C(cyan)%><(15)%ar%Creset %C(dim)[author %ad]%Creset %C(auto)%s%Creset %C(green)%aN%Creset %C(auto)%d%Creset'
+  loa = lo --all
+  lock = update-index --skip-worktree
+  locked = !git ls-files -v | grep ^S | sed -e 's|S ||'
+  m = merge
+  ma = magic
+  magic = "!f() { git add --all && git commit -m \"$*\" && git pull && git push; }; f"
+  main-branch = "!f() { for b in release main master; do git show-ref -q --heads $b && echo $b && return; done; echo main; }; f"
+  md = !git merge $(git dev-branch)
+  mm = !git merge $(git main-branch)
+  no = lo --no-merges
+  noa = no --all
+  p = push
+  poat = !git push origin --all && git push origin --tags
+  pulls = "!f() { for d in */; do (cd "$d" && pwd && git pull && cd ..) done }; f"
+  ra = remote add
+  rb = rebase
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbd = !git rebase $(git dev-branch)
+  rbm = !git rebase $(git main-branch)
+  rename-branch = "!f() { git branch -m \"$1\" \"$2\" && git push origin \"$2\" && git push origin \"$1\" --delete; }; f"
+  rename-tag = "!f() { git tag \"$2\" \"$1\" && git tag -d \"$1\" && git push origin \"$2\" && git push origin \"$1\" --delete; }; f"
+  rp = grep
+  rrm = remote remove
+  s = show
+  se = no --patch -S
+  st = !$HOME/.config/dotfiles/.config/bin/peek
+  sta = stash apply
+  stp = stash pop
+  sts = stash
+  sync = "!git pull && git fa && git cm && git pull && git delete-merged-branches"
+  unlock = update-index --no-skip-worktree
+  unwip = "!git rev-list --max-count=1 --format='%s' HEAD | grep -q -- '--wip--' && git reset HEAD~1"
+  wip = "!f() { git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message '--wip-- [skip ci]'; }; f"

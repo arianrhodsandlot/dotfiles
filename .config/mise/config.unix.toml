@@ -1,0 +1,2 @@
+[tools]
+tmux = { version = 'latest', lazy = true }

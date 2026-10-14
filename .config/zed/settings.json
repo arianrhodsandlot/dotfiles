@@ -1,0 +1,278 @@
+{
+  "agent": {
+    "default_model": {
+      "effort": "max",
+      "enable_thinking": true,
+      "model": "go/deepseek-v4.1-flash",
+      "provider": "opencode"
+    },
+    "dock": "right",
+    "enable_feedback": false,
+    "favorite_models": [],
+    "inline_assistant_model": {
+      "enable_thinking": false,
+      "model": "go/deepseek-v4.1-flash",
+      "provider": "opencode"
+    },
+    "model_parameters": [],
+    "threads_sidebar": {
+      "position": "right"
+    },
+    "tool_permissions": {
+      "default": "allow",
+      "tools": {}
+    }
+  },
+  "auto_install_extensions": {
+    "material-icon-theme": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 500
+    }
+  },
+  "base_keymap": "VSCode",
+  "buffer_font_family": "CodeNewRoman Nerd Font Mono",
+  "buffer_font_size": 14,
+  "cli_default_open_behavior": "existing_window",
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "colorize_brackets": true,
+  "double_click_in_multibuffer": "open",
+  "edit_predictions": {
+    "copilot": {
+      "prediction_debounce": 500
+    },
+    "provider": "copilot"
+  },
+  "format_on_save": "on",
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true
+    }
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "go_to_definition_fallback": "none",
+  "icon_theme": {
+    "dark": "Material Icon Theme",
+    "light": "Material Icon Theme",
+    "mode": "dark"
+  },
+  "indent_guides": {
+    "coloring": "indent_aware"
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": false
+  },
+  "language_models": {
+    "opencode": {
+      "available_models": [
+        {
+          "display_name": "DeepSeek V4.1 Flash",
+          "interleaved_reasoning": true,
+          "max_output_tokens": 384000,
+          "max_tokens": 616000,
+          "name": "deepseek-v4.1-flash",
+          "protocol": "openai_chat",
+          "reasoning_effort_levels": ["high", "max"],
+          "subscription": "go"
+        }
+      ],
+      "show_zen_models": false
+    }
+  },
+  "languages": {
+    "CSS": {
+      "language_servers": ["tailwindcss-language-server", "!vscode-css-language-server"]
+    },
+    "JSONC": {
+      "prettier": {
+        "trailingComma": "none"
+      }
+    },
+    "JavaScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TSX": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "TypeScript": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "Vue.js": {
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
+      }
+    }
+  },
+  "line_ending": "enforce_lf",
+  "lsp": {
+    "oxlint": {
+      "initialization_options": {
+        "settings": {
+          "fixKind": "safe_fix",
+          "run": "onType",
+          "unusedDisableDirectives": "deny"
+        }
+      }
+    },
+    "vue": {
+      "settings": {
+        "vue.inlayHints.inlineHandlerLeading": true,
+        "vue.inlayHints.missingProps": true,
+        "vue.inlayHints.optionsWrapper": true,
+        "vue.inlayHints.vBindShorthand": false
+      }
+    }
+  },
+  "macos": {
+    "buffer_font_size": 12
+  },
+  "minimap": {
+    "show": "auto"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "prettier": {
+    "htmlWhitespaceSensitivity": "ignore",
+    "jsSingleQuote": true,
+    "jsxSingleQuote": true,
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2
+  },
+  "preview_tabs": {
+    "enabled": false
+  },
+  "project_panel": {
+    "default_width": 360,
+    "diagnostic_badges": true,
+    "dock": "left",
+    "git_status_indicator": true,
+    "hide_root": false
+  },
+  "restore_on_startup": "last_session",
+  "semantic_tokens": "combined",
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "show_whitespaces": "all",
+  "soft_wrap": "editor_width",
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "default_height": 640,
+    "option_as_meta": true
+  },
+  "theme": {
+    "dark": "One Dark",
+    "light": "One Light",
+    "mode": "dark"
+  },
+  "theme_overrides": {
+    "One Dark": {
+      "background": "#121314",
+      "border": "#2a2b2c",
+      "editor.background": "#121314",
+      "editor.gutter.background": "#121314",
+      "editor.subheader.background": "#191a1bff",
+      "element.active": "#ffffff1b",
+      "element.background": "#297aa026",
+      "element.disabled": "#bbbebf0d",
+      "element.hover": "#ffffff14",
+      "element.selected": "#ffffff22",
+      "element.selection_background": "#276782dd",
+      "elevated_surface.background": "#191a1bff",
+      "ghost_element.active": "#ffffff14",
+      "ghost_element.background": "#00000000",
+      "ghost_element.disabled": "#bbbebf0d",
+      "ghost_element.hover": "#ffffff14",
+      "ghost_element.selected": "#ffffff11",
+      "panel.background": "#191a1b",
+      "status_bar.background": "#191a1b",
+      "surface.background": "#191a1bff",
+      "tab.active_background": "#121314",
+      "tab.inactive_background": "#191a1b",
+      "tab_bar.background": "#191a1b",
+      "terminal.background": "#191a1b",
+      "title_bar.background": "#191a1b",
+      "title_bar.inactive_background": "#191a1b",
+      "toolbar.background": "#121314"
+    },
+    "One Light": {
+      "background": "#fff",
+      "border": "#f0f1f2",
+      "editor.background": "#fff",
+      "editor.gutter.background": "#fff",
+      "editor.subheader.background": "#fafafdff",
+      "element.active": "#0000001e",
+      "element.background": "#0069cc26",
+      "element.disabled": "#2020200d",
+      "element.hover": "#00000014",
+      "element.selected": "#00000025",
+      "element.selection_background": "#0069cc40",
+      "elevated_surface.background": "#ffffffff",
+      "ghost_element.active": "#00000016",
+      "ghost_element.background": "#00000000",
+      "ghost_element.disabled": "#2020200d",
+      "ghost_element.hover": "#00000014",
+      "ghost_element.selected": "#00000013",
+      "panel.background": "#fafafdff",
+      "status_bar.background": "#fafafdff",
+      "surface.background": "#fafafdff",
+      "tab.active_background": "#fff",
+      "tab.inactive_background": "#fafafdff",
+      "tab_bar.background": "#fafafdff",
+      "terminal.background": "#fafafd",
+      "title_bar.background": "#fafafd",
+      "title_bar.inactive_background": "#fafafd",
+      "toolbar.background": "#fff"
+    }
+  },
+  "title_bar": {
+    "show_branch_status_icon": true,
+    "show_menus": false,
+    "show_user_picture": false
+  },
+  "toolbar": {
+    "code_actions": true
+  },
+  "ui_font_family": ".SystemUIFont",
+  "ui_font_size": 14,
+  "use_smartcase_search": true,
+  "use_system_path_prompts": false,
+  "use_system_prompts": false,
+  "windows": {
+    "terminal": {
+      "shell": {
+        "with_arguments": {
+          "args": ["-NoLogo"],
+          "program": "pwsh"
+        }
+      }
+    }
+  },
+  "wrap_guides": [80, 120]
+}

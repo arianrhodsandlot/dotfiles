@@ -1,0 +1,74 @@
+[branch]
+  autoSetupRebase = always
+[clean]
+  requireForce = false
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
+[commit]
+  gpgsign = true
+[core]
+  autocrlf = false
+  editor = vim
+  excludesfile = ~/.config/dotfiles/.config/git/ignore
+  filemode = false
+  fscache = true
+  pager = delta
+[credential "helperselector"]
+  selected = manager
+[credential]
+  helper = store
+[delta]
+  features = side-by-side line-numbers decorations
+  hyperlinks = true
+  hyperlinks-file-link-format = "zed://file/{path}:{line}"
+  navigate = true
+  syntax-theme = TwoDark
+[diff]
+  colorMoved = default
+  wordRegex = [^[:space:],:.-?]+
+[feature]
+  manyFiles = true
+[grep]
+  extendRegexp = true
+[help]
+  autoCorrect = 1
+[http]
+  postBuffer = 524288000
+  sslVerify = false
+[i18n]
+  commitEncoding = utf-8
+[init]
+  defaultBranch = main
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+[log]
+  mailmap = true
+  date = iso
+[merge]
+  conflictstyle = diff3
+[pack]
+  deltaCacheSize = 2047M
+  packSizeLimit = 2047M
+  windowMemory = 2047M
+  threads = 4
+[pager]
+  branch = cat
+[pull]
+  rebase = true
+[push]
+  autoSetupRemote = true
+  default = simple
+[rebase]
+  autoStash = true
+[rerere]
+  enabled = true
+[safe]
+  directory = *
+
+[include]
+  path = ~/.config/dotfiles/.config/git/alias
+  path = ~/.config/dotfiles/.config/private/.config/git/config
