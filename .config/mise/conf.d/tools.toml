@@ -11,7 +11,6 @@ sd = 'latest'
 starship = 'latest'
 tlrc = 'latest'
 topgrade = 'latest'
-yq = 'latest'
 zoxide = 'latest'
 
 'github:arianrhodsandlot/asobou' = { version = 'latest', lazy = true, lazy_bins = ['asobou'] }
@@ -40,4 +39,5 @@ pnpm = { version = 'latest', lazy = true }
 python = { version = 'latest', lazy = true }
 rust = { version = 'latest', lazy = true }
 viteplus = { version = 'latest', lazy = true }
+yq = { version = 'latest', lazy = true }
 yt-dlp = { version = 'latest', lazy = true }
