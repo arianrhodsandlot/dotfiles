@@ -7,7 +7,9 @@
 '~/.config/herdr/config.toml' = {}
 '~/.config/kitty/kitty.conf' = {}
 '~/.config/mintty/config' = {}
+'~/.config/opencode/cli.json' = {}
 '~/.config/opencode/opencode.json' = {}
+'~/.config/opencode/service.json' = {}
 '~/.config/pnpm/config.yaml' = {}
 '~/.config/tmux/tmux.conf' = {}
 '~/.config/topgrade/topgrade.toml' = {}
