@@ -1,2 +1,15 @@
 [bootstrap.repos]
 "~/.config/dotfiles" = { url = "git@github.com:arianrhodsandlot/dotfiles.git" }
+
+[bootstrap.packages]
+'apt:git' = 'latest'
+'apt:zsh' = 'latest'
+'brew:git' = 'latest'
+'brew:gnupg' = 'latest'
+'brew:zsh' = 'latest'
+'scoop:aria2' = 'latest'
+'scoop:curl' = 'latest'
+'scoop:vim' = 'latest'
+'winget:git.git' = 'latest'
+'winget:microsoft.coreutils' = 'latest'
+'winget:microsoft.powershell' = 'latest'
