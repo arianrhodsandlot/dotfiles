@@ -1,6 +1,4 @@
 [dotfiles]
-"~/.config/clink/starship.lua" = {}
-"~/.config/cmd/init.bat" = {}
 "~/AppData/Local/Packages/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/LocalState/settings.json" = "~/.config/dotfiles/.config/windows/winget/settings.json"
 "~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" = "~/.config/dotfiles/.config/windows/wt/settings.json"
 "~/AppData/Roaming//topgrade/topgrade.toml" = "~/.config/topgrade/topgrade.toml"
