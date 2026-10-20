@@ -3,14 +3,15 @@
 
 [bootstrap.packages]
 'apt:git' = 'latest'
+'apt:gnupg' = 'latest'
 'apt:vim' = 'latest'
 'apt:zsh' = 'latest'
 'brew:git' = 'latest'
 'brew:gnupg' = 'latest'
 'brew:zsh' = 'latest'
 'scoop:aria2' = 'latest'
-'scoop:curl' = 'latest'
-'scoop:vim' = 'latest'
 'winget:Git.Git' = 'latest'
+'winget:GnuPG.GnuPG' = 'latest'
 'winget:Microsoft.Coreutils' = 'latest'
 'winget:Microsoft.PowerShell' = 'latest'
+'winget:vim.vim' = 'latest'
