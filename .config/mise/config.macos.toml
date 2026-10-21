@@ -11,5 +11,10 @@ show_pathbar = true
 tap_to_click = true
 three_finger_drag = true
 
+[bootstrap.packages]
+'brew:git' = 'latest'
+'brew:gnupg' = 'latest'
+'brew:zsh' = 'latest'
+
 [dotfiles]
 "~/.config/iterm2/com.googlecode.iterm2.plist" = {}
