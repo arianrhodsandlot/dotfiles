@@ -10,7 +10,7 @@ fallback_to_fetch_default = true
 ask_retry = false
 assume_yes = true
 cleanup = true
-disable = ["bin", "cargo", "containers", "github_cli_extensions", "pip3", "node", "pnpm", "rustup", "tmux", "vim", "vite_plus"]
+disable = ["bin", "bun", "cargo", "containers", "github_cli_extensions", "github_cli_skills", "pip3", "node", "opencode", "pnpm", "rustup", "tmux", "vim", "vite_plus"]
 no_self_update = true
 notify_end = "never"
 
