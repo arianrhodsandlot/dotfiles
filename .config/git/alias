@@ -44,7 +44,7 @@
   noa = no --all
   p = push
   poat = !git push origin --all && git push origin --tags
-  pulls = "!f() { for d in */; do (cd "$d" && pwd && git pull && cd ..) done }; f"
+  pulls = "!f() { for d in */; do (if [ -e \"$d/.git\" ]; then (echo $d; git -C \"$d\" pull; echo '\n') fi; ) done }; f"
   ra = remote add
   rb = rebase
   rba = rebase --abort

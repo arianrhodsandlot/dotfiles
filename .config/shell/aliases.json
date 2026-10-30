@@ -1,8 +1,9 @@
 {
+  "...": "cd ../..",
+  "....": "cd ../../..",
   "1": "cd -",
   "_": "sudo",
   "agi": "apt install -y",
-  "ai": "aichat -s",
   "ase": "apt search",
   "b": "brew",
   "bi": "brew install",
