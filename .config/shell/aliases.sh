@@ -1,5 +1,5 @@
 alias_file="${DOTFILES_CONFIG_DIR}/shell/aliases.json"
-add_alias_command=$(yq -r "to_entries[] | \"alias \" + .key + \"='\" + .value + \"'\"" "$alias_file")
+add_alias_command=$(jq -r 'to_entries[] | "alias \(.key)=\(.value | @sh)"' "$alias_file")
 eval "$add_alias_command"
 
 while IFS= read -r line; do

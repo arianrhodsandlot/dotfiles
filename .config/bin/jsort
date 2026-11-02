@@ -3,7 +3,7 @@ set -euo pipefail
 
 for file in "$@"; do
   if [[ "$file" == *.json ]]; then
-    yq -iP 'sort_keys(..)' "$file"
+    jq -S . "$file" >"$file.tmp" && mv "$file.tmp" "$file"
   fi
 done
 
