@@ -7,6 +7,10 @@
   "defaultProvider": "opencode-go",
   "defaultThinkingLevel": "high",
   "enableInstallTelemetry": false,
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.76.1",
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.37.0"
+  },
   "hideThinkingBlock": true,
   "lastChangelogVersion": "999.999.999",
   "packages": [
