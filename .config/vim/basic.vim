@@ -43,7 +43,7 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 set ttyfast
-set viminfo+=n~/.config/vim/viminfo
+set viminfo+=n~/.local/state/vim/viminfo
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
 set wildmenu
 set wildmode=list:longest,list:full
@@ -93,7 +93,7 @@ nnoremap N Nzzzv
 
 tnoremap <C-j> <C-d>
 
-source ~/.config/vim/sensible.vim
+source ~/.config/dotfiles/.config/vim/sensible.vim
 
 augroup vimrc-remember-cursor-position
   autocmd!
