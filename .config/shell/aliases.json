@@ -3,7 +3,7 @@
   "....": "cd ../../..",
   "1": "cd -",
   "_": "sudo",
-  "agi": "apt install -y",
+  "agi": "sudo apt install -y",
   "ase": "apt search",
   "b": "brew",
   "bi": "brew install",
@@ -53,5 +53,5 @@
   "yb": "yarn build",
   "yd": "yarn dev",
   "ydp": "yarn dev:prod",
-  "yds": "yarn dev:state"
+  "yds": "yarn dev:stage"
 }
