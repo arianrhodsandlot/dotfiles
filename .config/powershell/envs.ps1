@@ -33,3 +33,18 @@ foreach ($prop in $envs.PSObject.Properties) {
   if ($value -match '^[A-Za-z]:') { $value = $value -replace '/', '\' }
   Set-Item "env:$($prop.Name)" -Value $value
 }
+
+$secretsPath = Join-Path $env:DOTFILES_CONFIG_DIR 'private' '.config' 'shell' 'secrets.json'
+if (Test-Path $secretsPath) {
+  $secrets = Get-Content -Raw $secretsPath | ConvertFrom-Json
+
+  foreach ($prop in $secrets.PSObject.Properties) {
+    if ($prop.Name -notmatch '^[A-Za-z_][A-Za-z0-9_]*$') { continue }
+    $value = [regex]::Replace([string]$prop.Value, '\$\{?(\w+)\}?', {
+      param($match)
+      [Environment]::GetEnvironmentVariable($match.Groups[1].Value)
+    })
+    if ($value -match '^[A-Za-z]:') { $value = $value -replace '/', '\' }
+    Set-Item "env:$($prop.Name)" -Value $value
+  }
+}
