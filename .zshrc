@@ -32,6 +32,11 @@ if [[ ! -e "${XDG_CONFIG_HOME}/zsh/F-Sy-H" ]]; then
 fi
 . "${XDG_CONFIG_HOME}/zsh/F-Sy-H/F-Sy-H.plugin.zsh"
 
+if [[ ! -f "${XDG_CONFIG_HOME}/zsh/sudo.plugin.zsh" ]]; then
+  curl -fsSL -o "${XDG_CONFIG_HOME}/zsh/sudo.plugin.zsh" https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+fi
+. "${XDG_CONFIG_HOME}/zsh/sudo.plugin.zsh"
+
 auto-peek() {
   if [ "$ZSH_AUTO_PEEK_ENABLED" = "true" ]; then
     peek
