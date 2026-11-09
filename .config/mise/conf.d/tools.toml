@@ -37,7 +37,7 @@ playwright = { version = 'latest', lazy = true }
 pnpm = { version = 'latest', lazy = true }
 python = { version = 'latest', lazy = true }
 rust = { version = 'latest', lazy = true }
-tlrc = { version = 'latest', lazy = true }
+tealdeer = { version = 'latest', lazy = true }
 viteplus = { version = 'latest', lazy = true }
 yq = { version = 'latest', lazy = true }
 yt-dlp = { version = 'latest', lazy = true }
