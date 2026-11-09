@@ -71,15 +71,15 @@ zle -N accept-line _magic-enter_accept-line
 if ! type starship &>/dev/null; then
   exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
   PROMPT="
-  %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-  %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
-  %{$reset_color%}@ \
-  %{$fg[green]%}%m \
-  %{$reset_color%}in \
-  %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
-   \
-  [%*] $exit_code
-  %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
+%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
+%{$reset_color%}@ \
+%{$fg[green]%}%m \
+%{$reset_color%}in \
+%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
+ \
+[%*] $exit_code
+%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
 fi
 
 if [[ -e "$HOME/.zshrc.local" ]]; then
