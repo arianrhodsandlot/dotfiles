@@ -12,8 +12,6 @@ starship = 'latest'
 topgrade = 'latest'
 zoxide = 'latest'
 
-'github:arianrhodsandlot/asobou' = { version = 'latest', lazy = true, lazy_bins = ['asobou'] }
-'npm:@arianrhodsandlot/release-kit' = { version = 'latest', lazy = true, lazy_bins = ['rk'] }
 'npm:npm-check-updates' = { version = 'latest', lazy = true, lazy_bins = ['ncu'] }
 'npm:skills' = { version = 'latest', lazy = true, lazy_bins = ['skills'] }
 7zip = { version = 'latest', lazy = true }
