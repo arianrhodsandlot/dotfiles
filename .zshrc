@@ -1,5 +1,6 @@
 autoload -Uz compinit
 autoload -Uz add-zsh-hook
+autoload -Uz colors && colors
 compinit
 HISTFILE="$HOME/.zsh_history"
 
@@ -23,14 +24,18 @@ export SHELL_NAME=zsh
 . "$HOME/.config/dotfiles/.config/shell/init.sh"
 
 if [[ ! -e "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions" ]]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions"
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions"
 fi
-. "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [[ -e "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+  . "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+fi
 
 if [[ ! -e "${XDG_CONFIG_HOME}/zsh/F-Sy-H" ]]; then
-  git clone https://github.com/z-shell/F-Sy-H "${XDG_CONFIG_HOME}/zsh/F-Sy-H"
+  git clone --depth=1 https://github.com/z-shell/F-Sy-H "${XDG_CONFIG_HOME}/zsh/F-Sy-H"
 fi
-. "${XDG_CONFIG_HOME}/zsh/F-Sy-H/F-Sy-H.plugin.zsh"
+if [[ -e "${XDG_CONFIG_HOME}/zsh/F-Sy-H/F-Sy-H.plugin.zsh" ]]; then
+  . "${XDG_CONFIG_HOME}/zsh/F-Sy-H/F-Sy-H.plugin.zsh"
+fi
 
 if [[ ! -f "${XDG_CONFIG_HOME}/zsh/sudo.plugin.zsh" ]]; then
   curl -fsSL -o "${XDG_CONFIG_HOME}/zsh/sudo.plugin.zsh" https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
@@ -62,6 +67,20 @@ _magic-enter_accept-line() {
 }
 
 zle -N accept-line _magic-enter_accept-line
+
+if ! type starship &>/dev/null; then
+  exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
+  PROMPT="
+  %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
+  %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
+  %{$reset_color%}@ \
+  %{$fg[green]%}%m \
+  %{$reset_color%}in \
+  %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
+   \
+  [%*] $exit_code
+  %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+fi
 
 if [[ -e "$HOME/.zshrc.local" ]]; then
   . "$HOME/.zshrc.local"

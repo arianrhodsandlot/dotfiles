@@ -10,6 +10,7 @@ if [ -d /opt/homebrew/bin ]; then
 elif [ -d /home/linuxbrew/.linuxbrew/bin ]; then
   PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 fi
+PATH=/opt/bin:/opt/usr/bin:$PATH
 PATH=$HOME/.bin:$HOME/.local/bin:$DOTFILES_CONFIG_DIR/bin:$XDG_DATA_HOME/pnpm/bin:$HOME/.orbstack/bin:$PATH
 export PATH
 
