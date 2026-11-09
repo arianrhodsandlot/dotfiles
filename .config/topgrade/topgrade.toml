@@ -13,6 +13,7 @@ cleanup = true
 disable = [
   "bin",
   "bun",
+  "bun_packages",
   "cargo",
   "claude_code",
   "claude_code_plugins",
