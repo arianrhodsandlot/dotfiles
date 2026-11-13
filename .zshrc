@@ -9,10 +9,17 @@ setopt EXTENDED_HISTORY SHARE_HISTORY
 unsetopt FLOW_CONTROL MENU_COMPLETE
 
 bindkey -e
-bindkey '[C' forward-word
-bindkey '[D' backward-word
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
+bindkey ' ' magic-space
+
+bindkey "${terminfo[kcbt]}" reverse-menu-complete
+bindkey "${terminfo[kdch1]}" delete-char
+bindkey '^[[1;5C' forward-word
+bindkey '^[[1;5D' backward-word
+bindkey '^[[3;5~' kill-word
+for k in "${terminfo[kcud1]}" '^[[B'; do [[ -n "$k" ]] && bindkey "$k" history-search-forward; done
+for k in "${terminfo[kcuu1]}" '^[[A'; do [[ -n "$k" ]] && bindkey "$k" history-search-backward; done
+for k in "${terminfo[kend]}" '^[[F' '^[[4~'; do [[ -n "$k" ]] && bindkey "$k" end-of-line; done
+for k in "${terminfo[khome]}" '^[[H' '^[[1~'; do [[ -n "$k" ]] && bindkey "$k" beginning-of-line; done
 
 zstyle ':completion:*' list-suffixes true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
@@ -23,22 +30,24 @@ export SHELL_NAME=zsh
 
 . "$HOME/.config/dotfiles/.config/shell/init.sh"
 
-if [[ ! -e "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions" ]]; then
-  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions"
-fi
-if [[ -e "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
-  . "${XDG_CONFIG_HOME}/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+ZSH_CONFIG_DIR="${XDG_CONFIG_HOME}/zsh"
+
+if [[ -e "${ZSH_CONFIG_DIR}/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+  . "${ZSH_CONFIG_DIR}/zsh-autosuggestions/zsh-autosuggestions.zsh"
+else
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "${ZSH_CONFIG_DIR}/zsh-autosuggestions"
+  . "${ZSH_CONFIG_DIR}/zsh-autosuggestions/zsh-autosuggestions.zsh"
 fi
 
-if [[ ! -e "${XDG_CONFIG_HOME}/zsh/F-Sy-H" ]]; then
-  git clone --depth=1 https://github.com/z-shell/F-Sy-H "${XDG_CONFIG_HOME}/zsh/F-Sy-H"
-fi
-if [[ -e "${XDG_CONFIG_HOME}/zsh/F-Sy-H/F-Sy-H.plugin.zsh" ]]; then
-  . "${XDG_CONFIG_HOME}/zsh/F-Sy-H/F-Sy-H.plugin.zsh"
+if [[ -e "${ZSH_CONFIG_DIR}/F-Sy-H/F-Sy-H.plugin.zsh" ]]; then
+  . "${ZSH_CONFIG_DIR}/F-Sy-H/F-Sy-H.plugin.zsh"
+else
+  git clone --depth=1 https://github.com/z-shell/F-Sy-H "${ZSH_CONFIG_DIR}/F-Sy-H"
+  . "${ZSH_CONFIG_DIR}/F-Sy-H/F-Sy-H.plugin.zsh"
 fi
 
-if [[ ! -f "${XDG_CONFIG_HOME}/zsh/sudo.plugin.zsh" ]]; then
-  curl -fsSL -o "${XDG_CONFIG_HOME}/zsh/sudo.plugin.zsh" https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
+if [[ ! -f "${ZSH_CONFIG_DIR}/sudo.plugin.zsh" ]]; then
+  curl -fsSL -o "${ZSH_CONFIG_DIR}/sudo.plugin.zsh" https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
 fi
 . "${XDG_CONFIG_HOME}/zsh/sudo.plugin.zsh"
 
