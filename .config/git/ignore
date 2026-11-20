@@ -13,10 +13,13 @@
 *~*
 .agents
 .cache
+.claude
 .codex
 .env.*.local
+.gemini
 .git-blame-ignore-revs
 .mailmap
+.omp
 .pi
 .playwright-cli
 .temp

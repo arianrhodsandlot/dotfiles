@@ -1,8 +1,4 @@
-autolearn:
-  autoContinue: false
-  enabled: false
-edit:
-  mode: hashline
+hideThinkingBlock: true
 marketplace:
   autoUpdate: auto
 memory:
@@ -11,7 +7,6 @@ modelRoles:
   default: opencode-go/deepseek-v4.1-flash:high
 power:
   sleepPrevention: idle
-readLineNumbers: false
 setupVersion: 3
 startup:
   changelogMode: hidden
@@ -20,6 +15,5 @@ startup:
   setupWizard: false
 statusLine:
   preset: minimal
-  separator: powerline-thin
+  separator: ascii
   transparent: true
-symbolPreset: unicode
