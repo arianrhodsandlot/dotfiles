@@ -8,6 +8,7 @@ if (Get-Command mise -ErrorAction SilentlyContinue) {
 }
 
 if (Get-Command starship -ErrorAction SilentlyContinue) {
+  $env:STARSHIP_CONFIG = Join-Path $env:DOTFILES_CONFIG_DIR 'starship' 'config-windows.toml'
   Invoke-EvalCache 'starship init powershell --print-full-init'
 }
 

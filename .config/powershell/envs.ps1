@@ -12,14 +12,8 @@ $env:XDG_DATA_HOME = Join-Path $HOME '.local' 'share'
 $env:DOTFILES_DIR = Join-Path $env:XDG_CONFIG_HOME 'dotfiles'
 $env:DOTFILES_CONFIG_DIR = Join-Path $env:DOTFILES_DIR '.config'
 
-$env:BAT_CONFIG_PATH = Join-Path $env:DOTFILES_CONFIG_DIR 'bat' 'config'
-$env:LG_CONFIG_FILE = Join-Path $env:DOTFILES_CONFIG_DIR 'lazygit' 'config.yml'
-$env:MISE_AUTO_ENV = 'true'
 $env:MISE_CONFIG_DIR = Join-Path $env:DOTFILES_CONFIG_DIR 'mise'
 $env:MISE_DATA_DIR = Join-Path $env:XDG_DATA_HOME 'mise'
-$env:PI_CODING_AGENT_DIR = Join-Path $env:DOTFILES_CONFIG_DIR 'pi' 'agent'
-$env:PI_CODING_AGENT_SESSION_DIR = Join-Path $env:XDG_DATA_HOME 'pi' 'sessions'
-$env:STARSHIP_CONFIG = Join-Path $env:DOTFILES_CONFIG_DIR 'starship' 'config.toml'
 
 $envsPath = Join-Path $env:DOTFILES_CONFIG_DIR 'shell' 'envs.json'
 $envs = Get-Content -Raw $envsPath | ConvertFrom-Json
