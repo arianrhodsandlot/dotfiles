@@ -27,7 +27,6 @@ else
   fi
 fi
 
-# npm requires "run" keyword, yarn and pnpm don't
 if [[ "$pkg_manager" == "npm" ]]; then
   "$pkg_manager" run "$@"
 else
