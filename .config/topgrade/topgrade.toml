@@ -18,11 +18,13 @@ disable = [
   "claude_code",
   "claude_code_plugins",
   "codex",
+  "colima",
   "containers",
   "github_cli_extensions",
   "github_cli_skills",
   "node",
   "opencode",
+  "pi",
   "pip3",
   "pnpm",
   "rustup",
@@ -33,9 +35,6 @@ disable = [
 ]
 no_self_update = true
 notify_end = "never"
-
-[post_commands]
-pi-models = "pi update --models"
 
 [vscode]
 cleanup_obsolete_extensions = true
