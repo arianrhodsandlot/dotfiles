@@ -103,7 +103,7 @@ format = "{:%m-%d %A %H:%M:%S}"
 color = "secondary"
 
 [widget.media]
-hide_when_no_media = false
+hide_when_no_media = true
 title_scroll = "on_hover"
 
 [widget.network]
