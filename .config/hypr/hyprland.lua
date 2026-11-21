@@ -1,3 +1,6 @@
+hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
+hl.curve("easy", { type = "spring", mass = 1, stiffness = 500, dampening = 35 })
+hl.animation({ leaf = "global", enabled = true, speed = 3, bezier = "quick" })
 hl.animation({ leaf = "global", enabled = true, speed = 3, bezier = "quick" })
 hl.animation({ leaf = "windows", enabled = true, speed = 3, spring = "easy", style = "slide" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "quick", style = "slide" })
@@ -5,14 +8,14 @@ hl.animation({ leaf = "specialWorkspaceIn", enabled = true, speed = 2, bezier = 
 hl.animation({ leaf = "specialWorkspaceOut", enabled = true, speed = 2, bezier = "quick", style = "slide bottom" })
 
 hl.config({
-    general = { gaps_in = 3, gaps_out = 8, border_size = 2, extend_border_grab_area = 10, resize_on_border = true },
+    general = { gaps_in = 0, gaps_out = 0, border_size = 4, extend_border_grab_area = 10, resize_on_border = true },
     decoration = {
+        active_opacity = 1,
+        blur = { size = 5, passes = 10, special = true },
         dim_special = 0.3,
-        rounding = 10,
-        active_opacity = 0.95,
-        inactive_opacity = 0.85,
         fullscreen_opacity = 1,
-        blur = { size = 5, passes = 4, special = true },
+        inactive_opacity = 0.9,
+        rounding = 0,
     },
     dwindle = { preserve_split = true, },
     ecosystem = { no_update_news = true, no_donation_nag = true, },
@@ -48,21 +51,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("noctalia")
     hl.exec_cmd("xhost +SI:localuser:root")
 end)
-
--- ===========================================================================
--- Environment variables
--- ===========================================================================
--- Environmental variables (for reference https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/)
--- if you use UWSM, define your variables in ~/.config/uwsm/env
--- if you don't use UWSM, define your variables here (e.g. hl.env("QT_QPA_PLATFORM", "wayland"))
-
--- if you have an NVIDIA GPU uncomment the following lines:
-
--- hl.env("GBM_BACKEND", "nvidia-drm") -- force GBM as a backend
--- hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia") -- force GBM as a backend
--- hl.env("LIBVA_DRIVER_NAME", "nvidia") -- Hardware acceleration on NVIDIA GPUs
--- hl.env("__GL_GSYNC_ALLOWED", "1") -- Controls if G-Sync capable monitors should use Variable Refresh Rate (VRR)
-
 
 hl.gesture({ fingers = 4, direction = "horizontal", action = "workspace" })
 hl.gesture({ fingers = 3, direction = "down", action = "close" })
@@ -116,15 +104,18 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
 ---- LAUNCHER ----
 ------------------
 
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(launchPrefix .. BROWSER))
+hl.bind("ALT + Space", hl.dsp.workspace.toggle_special("term"))
+hl.bind(mainMod .. " + 1", hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
+hl.bind(mainMod .. " + 2", hl.dsp.exec_cmd(launchPrefix .. BROWSER))
+hl.bind(mainMod .. " + 3", hl.dsp.exec_cmd(launchPrefix .. EDITOR))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(launchPrefix .. EDITOR))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(launchPrefix .. FILE_MANAGER))
 hl.bind(mainMod .. " + Escape", hl.dsp.exec_cmd(noctCall .. "panel-toggle session"))
+hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(noctCall .. "session lock"))
-hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(launchPrefix .. TERMINAL))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(launchPrefix .. BROWSER))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(noctCall .. "panel-toggle launcher"))
 hl.bind(mainMod .. " + semicolon", hl.dsp.exec_cmd(noctCall .. "settings-toggle"))
-hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 
 hl.bind("Print", hl.dsp.exec_cmd(noctCall .. "screenshot-region"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(noctCall .. "panel-toggle clipboard"))
@@ -169,6 +160,13 @@ hl.workspace_rule({ workspace = "1", monitor = MONITOR1, default = true, persist
 hl.workspace_rule({ workspace = "2", monitor = MONITOR1, default = true, persistent = true })
 hl.workspace_rule({ workspace = "3", monitor = MONITOR1, default = true, persistent = true })
 
+-- Dropdown terminal (guake-style): hidden special workspace, auto-launched when empty
+hl.on("workspace.created", function(ws)
+    if ws.name == "special:term" and ws.is_empty then
+        hl.exec_cmd(launchPrefix .. TERMINAL)
+    end
+end)
+
 -- Window rules wiki https://wiki.hypr.land/Configuring/Basics/Window-Rules/
 
 -- Generic floating position
@@ -206,11 +204,7 @@ hl.window_rule({
         gamingWorkspace
 })
 hl.window_rule({
-    match            = {
-        class         = gamingApps,
-        title         = "^(.+)$",
-        initial_title = "negative:^(.*\\\\home\\\\.*)$",
-    },
+    match            = { class = gamingApps, title = "^(.+)$", initial_title = "negative:^(.*\\\\home\\\\.*)$", },
     content          = "game",
     decorate         = false,
     fullscreen_state = 2,
@@ -218,10 +212,7 @@ hl.window_rule({
     sync_fullscreen  = true,
 })
 hl.window_rule({
-    match            = {
-        class         = "^(steam_app.*)$",
-        initial_title = "^$",
-    },
+    match            = { class = "^(steam_app.*)$", initial_title = "^$", },
     center           = true,
     float            = true,
     fullscreen       = false,
@@ -230,14 +221,14 @@ hl.window_rule({
 })
 
 -- Apps
-hl.window_rule({ match = { class = "^(.*\\.exe)$", float = true }, monitor = PRIMARY_MONITOR, center = true, fullscreen_state = 0 })
-hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true, monitor = PRIMARY_MONITOR })
-hl.window_rule({ match = { class = "^(vesktop|discord)$" }, monitor = PRIMARY_MONITOR })
 hl.window_rule({ match = { class = "^(.*[Cc]alc.*)$" }, float = true, size = { "max(monitor_w, monitor_h)*0.17", "min(monitor_w, monitor_h)*0.43" } })
-hl.window_rule({ match = { class = "^(org\\.kde\\.keditfiletype)$" }, float = true })
-hl.window_rule({ match = { class = "^(org\\.kde\\.ark)$" }, size = { "max(monitor_w, monitor_h)*0.40", "min(monitor_w, monitor_h)*0.40" } })
+hl.window_rule({ match = { class = "^(.*[Ll]auncher.*)$" }, float = true, monitor = PRIMARY_MONITOR })
+hl.window_rule({ match = { class = "^(.*\\.exe)$", float = true }, monitor = PRIMARY_MONITOR, center = true, fullscreen_state = 0 })
 hl.window_rule({ match = { class = "^(.*swash)$", title = "^(Swash)$" }, min_size = { "max(monitor_w, monitor_h)*0.35", "min(monitor_w, monitor_h)*0.35" }, float = true })
+hl.window_rule({ match = { class = "^(com\\.mitchellh\\.ghostty)$" }, workspace = "special:term", })
 hl.window_rule({ match = { class = "^(dev\\.)?(noctalia\\.Noctalia(\\.Settings)?)$" }, float = true, size = { "monitor_w*0.70", "monitor_h*0.70" } })
+hl.window_rule({ match = { class = "^(dev\\.zed\\.Zed)$" }, fullscreen_state = 1 })
+hl.window_rule({ match = { class = "^(microsoft-edge)$" }, fullscreen_state = 1 })
 hl.window_rule({
     match = {
         class = "^(org\\.kde\\.dolphin\\)$",
@@ -264,36 +255,20 @@ local floatApps = {
     { title = "^(File Upload|Choose wallpaper|Library)(.*)$" },
     { title = "^(Open|Authentication Required|Add Folder to Workspace|Choose Files|Save As|Confirm to replace files|File Operation Progress)$" },
     { title = "^(Winetricks.*|Protontricks.*)$" },
+    { class = "^(wechat|com\\.tencent\\.wechatappex)$" },
 }
 for _, m in ipairs(floatApps) do hl.window_rule({ match = m, float = true }) end
 
 -- Ignore maximize requests from all apps. You'll probably like this.
-hl.window_rule({
-    name           = "suppress-maximize-events",
-    match          = { class = ".*" },
-    suppress_event = "maximize",
-})
+hl.window_rule({ name = "suppress-maximize-events", match = { class = ".*" }, suppress_event = "maximize", })
 
 -- Fix some dragging issues with XWayland
-hl.window_rule({
-    name     = "fix-xwayland-drags",
-    match    = {
-        class      = "^$",
-        title      = "^$",
-        xwayland   = true,
-        float      = true,
-        fullscreen = false,
-        pin        = false,
-    },
-    no_focus = true,
-})
+hl.window_rule({ name = "fix-xwayland-drags", match = { class = "^$", title = "^$", xwayland = true, float = true, fullscreen = false, pin = false, }, no_focus = true, })
 
 -- Noctalia layer rule
 hl.layer_rule({
     name = "noctalia",
-    match = {
-        namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$",
-    },
+    match = { namespace = "^noctalia-(bar-.+|notification|dock|panel|attached-panel|osd|window-switcher)$", },
     no_anim = true,
     ignore_alpha = 0.5,
     blur = true,
