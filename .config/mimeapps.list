@@ -1,0 +1,6 @@
+[Added Associations]
+
+[Default Applications]
+text/plain=dev.zed.Zed.desktop;
+x-scheme-handler/http=microsoft-edge.desktop;
+x-scheme-handler/https=microsoft-edge.desktop;
