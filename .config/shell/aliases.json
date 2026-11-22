@@ -4,6 +4,7 @@
   "1": "cd -",
   "_": "sudo",
   "agi": "sudo apt install -y",
+  "agr": "sudo apt purge --auto-remove",
   "aguu": "sudo apt-get update && sudo apt-get upgrade",
   "ase": "apt search",
   "b": "brew",

@@ -1,4 +1,11 @@
+[bootstrap.packages]
+'apt:git' = 'latest'
+'apt:gnupg' = 'latest'
+'apt:vim' = 'latest'
+'apt:zsh' = 'latest'
+
 [dotfiles]
+'~/.config/fontconfig/fonts.conf' = {}
 '~/.config/hypr/hyprland.lua' = {}
 '~/.config/noctalia/config.toml' = {}
 '~/.config/user-dirs.dirs' = {}

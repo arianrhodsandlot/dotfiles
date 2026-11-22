@@ -1,3 +1,11 @@
+[bootstrap.packages]
+'scoop:aria2' = 'latest'
+'winget:Git.Git' = 'latest'
+'winget:GnuPG.GnuPG' = 'latest'
+'winget:Microsoft.Coreutils' = 'latest'
+'winget:Microsoft.PowerShell' = 'latest'
+'winget:vim.vim' = 'latest'
+
 [dotfiles]
 "~/AppData/Local/Packages/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/LocalState/settings.json" = "~/.config/dotfiles/.config/windows/winget/settings.json"
 "~/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json" = "~/.config/dotfiles/.config/windows/wt/settings.json"
