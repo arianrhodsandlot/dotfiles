@@ -124,6 +124,9 @@
     }
   },
   "line_ending": "enforce_lf",
+  "linux": {
+    "ui_font_family": "Noto Sans"
+  },
   "lsp": {
     "oxlint": {
       "initialization_options": {
