@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/true
+Name=Qt V4L2 test Utility
+NoDisplay=true
+Hidden=true

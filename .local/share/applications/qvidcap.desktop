@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/true
+Name=Qt V4L2 video capture utility
+NoDisplay=true
+Hidden=true

@@ -1,4 +1,5 @@
 !.config/pi/agent/references/
 !.config/pi/agent/settings.json
 .config/pi/agent/*
+.luarc.json
 private

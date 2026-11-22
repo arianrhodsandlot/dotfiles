@@ -12,6 +12,7 @@ end = [
     "volume",
     "network",
     "clock",
+    "battery",
     "session",
 ]
 margin_edge = 0

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/true
+Name=Vim
+NoDisplay=true
+Hidden=true

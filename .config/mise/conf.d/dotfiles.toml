@@ -5,11 +5,9 @@
 '~/.config/ghostty/config' = {}
 '~/.config/git/config' = {}
 '~/.config/herdr/config.toml' = {}
-'~/.config/hypr/hyprland.lua' = {}
 '~/.config/kitty/kitty.conf' = {}
 '~/.config/mimeapps.list' = {}
 '~/.config/mintty/config' = {}
-'~/.config/noctalia/config.toml' = {}
 '~/.config/omp/profiles/omp/agent/config.yml' = {}
 '~/.config/opencode/cli.json' = {}
 '~/.config/opencode/opencode.json' = {}
@@ -17,9 +15,6 @@
 '~/.config/pnpm/config.yaml' = {}
 '~/.config/tmux/tmux.conf' = {}
 '~/.config/topgrade/topgrade.toml' = {}
-'~/.config/user-dirs.dirs' = {}
-'~/.config/user-dirs.locale' = {}
-'~/.config/uwsm/env' = {}
 '~/.config/wezterm/wezterm.lua' = {}
 '~/.config/yt-dlp/config' = {}
 '~/.config/zed/keymap.json' = {}

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=/bin/true
+Name=Keyboard layout viewer
+NoDisplay=true
+Hidden=true
