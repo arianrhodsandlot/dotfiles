@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=info
+Name=TeXInfo
+NoDisplay=true
+Hidden=true
