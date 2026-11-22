@@ -1,2 +1,5 @@
+[dotfiles]
+'~/.config/zed/*' = {}
+
 [tools]
 tmux = { version = 'latest', lazy = true }

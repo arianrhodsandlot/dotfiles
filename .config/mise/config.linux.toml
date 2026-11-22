@@ -7,14 +7,8 @@
 [dotfiles]
 '~/.config/fontconfig/fonts.conf' = {}
 '~/.config/hypr/hyprland.lua' = {}
+'~/.config/mimeapps.list' = {}
 '~/.config/noctalia/config.toml' = {}
-'~/.config/user-dirs.dirs' = {}
-'~/.config/user-dirs.locale' = {}
+'~/.config/user-dirs.*' = {}
 '~/.config/uwsm/env' = {}
-'~/.local/share/applications/fcitx5-configtool.desktop' = {}
-'~/.local/share/applications/kbd-layout-viewer5.desktop' = {}
-'~/.local/share/applications/org.fcitx.fcitx5-migrator.desktop' = {}
-'~/.local/share/applications/qv4l2.desktop' = {}
-'~/.local/share/applications/qvidcap.desktop' = {}
-'~/.local/share/applications/uuctl.desktop' = {}
-'~/.local/share/applications/vim.desktop' = {}
+'~/.local/share/applications/*' = '~/.config/dotfiles/.local/share/applications/*'
