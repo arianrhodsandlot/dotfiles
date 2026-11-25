@@ -1,6 +1,8 @@
 [
   {
     "bindings": {
+      "ctrl-alt-shift-tab": "multi_workspace::PreviousProject",
+      "ctrl-alt-tab": "multi_workspace::NextProject",
       "secondary-,": "zed::OpenSettingsFile",
       "secondary-k w": "workspace::CloseAllItemsAndPanes",
       "secondary-shift-i": "workspace::ToggleRightDock"

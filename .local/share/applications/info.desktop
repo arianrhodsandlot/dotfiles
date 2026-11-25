@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=info
+Exec=/bin/true
 Name=TeXInfo
 NoDisplay=true
 Hidden=true

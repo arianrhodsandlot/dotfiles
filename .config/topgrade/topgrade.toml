@@ -35,6 +35,7 @@ disable = [
 ]
 no_self_update = true
 notify_end = "never"
+pre_sudo = true
 
 [vscode]
 cleanup_obsolete_extensions = true
