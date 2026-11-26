@@ -11,7 +11,7 @@ style_user = 'bold cyan'
 ssh_only = false
 
 [localip]
-ssh_only = true
+ssh_only = false
 disabled = false
 
 [shlvl]
@@ -27,6 +27,7 @@ disabled = false
 
 [memory_usage]
 disabled = false
+threshold = 90
 
 [sudo]
 disabled = false
