@@ -6,9 +6,9 @@
 
 [dotfiles]
 '~/.config/fontconfig/fonts.conf' = {}
-'~/.config/hypr/hyprland.lua' = {}
+'~/.config/hypr' = {}
 '~/.config/mimeapps.list' = {}
-'~/.config/noctalia/config.toml' = {}
+'~/.config/noctalia' = {}
 '~/.config/user-dirs.*' = {}
-'~/.config/uwsm/env' = {}
-'~/.local/share/applications/*' = '~/.config/dotfiles/.local/share/applications/*'
+'~/.config/uwsm' = {}
+'~/.local' = { mode = 'symlink-each' }

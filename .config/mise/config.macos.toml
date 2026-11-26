@@ -18,3 +18,4 @@ three_finger_drag = true
 
 [dotfiles]
 "~/.config/iterm2/com.googlecode.iterm2.plist" = {}
+'~/.local/share/applications' = { mode = 'symlink-each' }
