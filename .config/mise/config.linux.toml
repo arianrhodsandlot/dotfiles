@@ -11,4 +11,4 @@
 '~/.config/noctalia' = {}
 '~/.config/user-dirs.*' = {}
 '~/.config/uwsm' = {}
-'~/.local' = { mode = 'symlink-each' }
+'~/.local/share/applications' = { mode = 'symlink-each' }
