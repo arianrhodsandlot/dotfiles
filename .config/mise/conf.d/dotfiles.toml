@@ -4,7 +4,7 @@
 '~/.config/bottom' = {}
 '~/.config/ghostty' = {}
 '~/.config/git' = {}
-'~/.config/herdr' = {}
+'~/.config/herdr/*' = {}
 '~/.config/kitty' = {}
 '~/.config/mintty' = {}
 '~/.config/omp' = {}
