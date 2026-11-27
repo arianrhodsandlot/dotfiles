@@ -15,6 +15,7 @@
   "cxc": "codex resume --last",
   "g": "git",
   "gc!": "gca",
+  "gk": "gitk",
   "h": "herdr",
   "l": "eza -l --icons",
   "la": "eza -la --icons",

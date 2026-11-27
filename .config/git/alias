@@ -28,6 +28,7 @@
   dw = diff --word-diff
   fa = fetch --all --prune --jobs=0
   fo = fetch origin
+  g = gui
   l = pull
   lg = log --stat --patch
   lo = log --oneline --decorate --date=format:'%Y-%m-%d %H:%M %z %a(%w)' --pretty=format:'%C(yellow)%h%Creset %C(cyan)%><(15)%ar%Creset %C(dim)[author %ad]%Creset %C(auto)%s%Creset %C(green)%aN%Creset %C(auto)%d%Creset'
