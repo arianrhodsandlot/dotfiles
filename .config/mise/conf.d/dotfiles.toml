@@ -7,7 +7,7 @@
 '~/.config/herdr/config.toml' = {}
 '~/.config/kitty' = {}
 '~/.config/mintty' = {}
-'~/.config/omp' = {}
+'~/.config/omp/profiles/omp/agent/config.yml' = {}
 '~/.config/opencode/*' = {}
 '~/.config/pnpm' = {}
 '~/.config/tmux' = {}
